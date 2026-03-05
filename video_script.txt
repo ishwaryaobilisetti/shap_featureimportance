@@ -1,0 +1,113 @@
+============================================================
+SHAP FEATURE IMPORTANCE ANALYSIS - VIDEO SCRIPT (4 MINUTES)
+============================================================
+Note: Read at normal pace. Each section has approximate timing.
+
+------------------------------------------------------------
+INTRO (15 seconds)
+------------------------------------------------------------
+Hello everyone. Today I will walk you through my SHAP Feature Importance Analysis project for Customer Churn Prediction. This project demonstrates how machine learning models can be made interpretable using SHAP values.
+
+------------------------------------------------------------
+PROBLEM STATEMENT (30 seconds)
+------------------------------------------------------------
+Customer churn is a critical business problem. When customers leave, companies lose revenue and must spend more to acquire new customers. 
+
+The challenge is not just predicting WHO will churn, but understanding WHY they churn. Traditional machine learning models are black boxes - they give predictions but no explanations.
+
+My goal was to build a churn prediction model with at least 80% AUC score and make it fully interpretable using SHAP, a state-of-the-art explainability technique.
+
+------------------------------------------------------------
+ARCHITECTURE (30 seconds)
+------------------------------------------------------------
+Here is my project architecture:
+
+First, I load the Telco Customer Churn dataset with 7,043 customers and 21 features.
+
+Second, I preprocess the data - handling missing values, encoding categorical variables, and splitting into train-test sets.
+
+Third, I train an XGBoost classifier with class imbalance handling.
+
+Fourth, I apply SHAP TreeExplainer to calculate exact feature contributions.
+
+Finally, I generate global and local interpretability visualizations.
+
+------------------------------------------------------------
+SOLUTION - DATA LOADING (20 seconds)
+------------------------------------------------------------
+Looking at my notebook, in cells 1 to 5, I import necessary libraries and load the dataset directly from IBM's GitHub repository. The dataset contains customer demographics, services subscribed, and churn status.
+
+------------------------------------------------------------
+SOLUTION - PREPROCESSING (25 seconds)
+------------------------------------------------------------
+In cells 6 to 10, I perform data preprocessing. I handle 11 missing values in TotalCharges column by filling with median. I encode categorical variables using Label Encoding. I then split data into 80% training and 20% testing sets.
+
+------------------------------------------------------------
+SOLUTION - MODEL TRAINING (25 seconds)
+------------------------------------------------------------
+In cells 11 to 15, I train the XGBoost classifier. The key configuration is scale_pos_weight set to 2.77 to handle class imbalance since only 27% of customers churned. My model achieved an AUC score of 0.8312, exceeding the 0.80 requirement.
+
+------------------------------------------------------------
+SOLUTION - SHAP EXPLAINER (20 seconds)
+------------------------------------------------------------
+In cells 16 to 20, I create the SHAP TreeExplainer which computes exact Shapley values efficiently for tree-based models. I calculate SHAP values for all test samples to understand feature contributions.
+
+------------------------------------------------------------
+SOLUTION - GLOBAL INTERPRETABILITY (30 seconds)
+------------------------------------------------------------
+In cells 21 to 30, I generate global interpretability plots. 
+
+The beeswarm plot shows Contract type, Tenure, and Total Charges are the top 3 most important features.
+
+The bar chart confirms feature importance rankings.
+
+Month-to-month contracts significantly increase churn risk, while longer tenure reduces churn risk.
+
+------------------------------------------------------------
+SOLUTION - LOCAL INTERPRETABILITY (25 seconds)
+------------------------------------------------------------
+In cells 31 to 40, I create local explanations for individual predictions. 
+
+Force plots show how each feature pushes the prediction toward or away from churn.
+
+Waterfall plots break down the exact contribution of each feature for specific customers.
+
+------------------------------------------------------------
+SOLUTION - FEATURE INTERACTIONS (20 seconds)
+------------------------------------------------------------
+In cells 41 to 45, I analyze feature interactions using dependence plots. These reveal that the combination of month-to-month contract with low tenure creates the highest churn risk.
+
+------------------------------------------------------------
+CHALLENGES (25 seconds)
+------------------------------------------------------------
+I faced two main challenges:
+
+First, SHAP version compatibility - the expected_value attribute returns an array in newer versions, causing format errors. I resolved this by extracting the correct class probability index.
+
+Second, class imbalance - with only 27% churners, the model initially favored the majority class. Using scale_pos_weight fixed this issue.
+
+------------------------------------------------------------
+BUSINESS INSIGHTS (25 seconds)
+------------------------------------------------------------
+My analysis revealed three key insights:
+
+One - Contract type is the strongest churn predictor. Month-to-month customers are highest risk.
+
+Two - New customers with less than 12 months tenure need special attention.
+
+Three - Fiber optic internet users show higher churn, suggesting service quality issues.
+
+------------------------------------------------------------
+CONCLUSION (30 seconds)
+------------------------------------------------------------
+To summarize, I successfully built an XGBoost churn prediction model achieving 83.12% AUC score. Using SHAP values, I transformed a black-box model into a fully interpretable solution.
+
+The business can now understand exactly why each customer is predicted to churn and take targeted retention actions.
+
+All code, model files, and documentation are available on my GitHub repository.
+
+Thank you for watching.
+
+============================================================
+END OF SCRIPT - TOTAL: APPROXIMATELY 4 MINUTES
+============================================================
