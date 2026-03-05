@@ -163,14 +163,15 @@ To ensure reproducibility:
 
 ## Video Walkthrough
 
-[Link to Video Walkthrough] - *Add your video link here*
+📹 **[Watch the Video Walkthrough](https://drive.google.com/file/d/1Cl_tiYQPvWOSwSjN9yPQYqGPXjtZGJ53/view?usp=sharing)**
 
 The video covers:
-- Project overview and objectives (0:00-0:30)
-- Data preprocessing approach (0:30-1:00)
-- Model training and evaluation (1:00-1:30)
-- Key SHAP visualizations explained (1:30-3:30)
-- Business insights and recommendations (3:30-5:00)
+- Problem statement and objectives (0:00-0:45)
+- Project architecture (0:45-1:15)
+- Data loading and preprocessing (1:15-2:00)
+- Model training with XGBoost (2:00-2:30)
+- SHAP global and local interpretability (2:30-3:30)
+- Challenges and business insights (3:30-4:00)
 
 ## License
 
