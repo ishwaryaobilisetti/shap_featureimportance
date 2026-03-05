@@ -79,7 +79,7 @@ The dataset is automatically downloaded when running the notebook.
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/ishwaryaobilisetti/shap_featureimportance.git
    cd shap_featureimportance
    ```
 
@@ -166,12 +166,14 @@ To ensure reproducibility:
 📹 **[Watch the Video Walkthrough](https://drive.google.com/file/d/1Cl_tiYQPvWOSwSjN9yPQYqGPXjtZGJ53/view?usp=sharing)**
 
 The video covers:
-- Problem statement and objectives (0:00-0:45)
-- Project architecture (0:45-1:15)
-- Data loading and preprocessing (1:15-2:00)
-- Model training with XGBoost (2:00-2:30)
-- SHAP global and local interpretability (2:30-3:30)
-- Challenges and business insights (3:30-4:00)
+- Introduction and problem statement (0:00-1:00)
+- Project architecture overview (1:00-2:00)
+- Data loading and preprocessing (2:00-3:00)
+- Model training with XGBoost (3:00-4:00)
+- SHAP global interpretability (4:00-5:30)
+- SHAP local interpretability (5:30-6:30)
+- Challenges faced and solutions (6:30-7:15)
+- Business insights and conclusion (7:15-8:00)
 
 ## License
 
